@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+    <a class="button is-primary" href="{{ path('add_task') }}">
+        <span>Add new task</span>
+        <span class="icon is-small">
+          <i class="fas fa-plus"></i>
+        </span>
+    </a>
+
+    <table class="table full-width">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if tasks is defined %}
+            {% for task in tasks %}
+                <tr>
+                    <th>{{ task.title }}</th>
+                    <td>{{ task.description }}</td>
+                    <td>
+                        <form action="{{ path('delete_task', {taskId: task.id}) }}" method="post">
+                            <input type="submit" class="button is-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+        </tbody>
+    </table>
+
+    A default list is generated when there is not any task available.
+
+{% endblock %}

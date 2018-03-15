@@ -1,0 +1,11 @@
+.full-width {
+    width: 100%;
+}
+
+.is-light-grey {
+    background-color: #EEEEEE;
+}
+
+.push-top {
+    margin-top: 20px;
+}

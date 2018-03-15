@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="is-light-grey">
+    <head>
+        <title>{% block title '' %} - My Silex Application</title>
+
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        <link href="/toDoList/node_modules/bulma/css/bulma.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body  >
+        <section class="hero is-success">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        To Do List
+                    </h1>
+                    <h2 class="subtitle">
+                        Loic Audiger : Source code quality showcase
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="content is-light-grey" >
+            <div class="columns">
+                <div class="column is-6 is-offset-3 box push-top">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+</html>
